@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mt-4">Create a New Event</h1>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.title.label(class="form-label") }}
+    {{ form.title(class="form-control") }}
+    {% if form.title.errors %}
+    <div class="text-danger">{{ form.title.errors[0] }}</div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.description.label(class="form-label") }}
+    {{ form.description(class="form-control") }}
+    {% if form.description.errors %}
+    <div class="text-danger">{{ form.description.errors[0] }}</div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.date.label(class="form-label") }}
+    {{ form.date(class="form-control") }}
+    {% if form.date.errors %}
+    <div class="text-danger">{{ form.date.errors[0] }}</div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.time.label(class="form-label") }}
+    {{ form.time(class="form-control") }}
+    {% if form.time.errors %}
+    <div class="text-danger">{{ form.time.errors[0] }}</div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.location.label(class="form-label") }}
+    {{ form.location(class="form-control") }}
+    {% if form.location.errors %}
+    <div class="text-danger">{{ form.location.errors[0] }}</div>
+    {% endif %}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create Event</button>
+</form>
+{% endblock %}

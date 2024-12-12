@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mt-4">Search Events</h1>
+
+<!-- Search Form -->
+<form method="POST" action="{{ url_for('search') }}">
+    {{ form.hidden_tag() }}
+    <div class="mb-3 row">
+        <div class="col-md-8">
+            <label for="query" class="form-label">Search Events</label>
+            {{ form.query(class="form-control", placeholder="Enter event title or description") }}
+        </div>
+        <div class="col-md-4">
+            <label for="sort_by" class="form-label">Sort By:</label>
+            <select name="sort_by" id="sort_by" class="form-select">
+                <option value="alphabetical" {% if sort_by='alphabetical' %}selected{% endif %}>Alphabetical</option>
+                <option value="rating" {% if sort_by='rating' %}selected{% endif %}>Rating</option>
+                <option value="attendance" {% if sort_by='attendance' %}selected{% endif %}>Popularity</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!-- Search Results -->
+<h2 class="mt-4">Search Results</h2>
+<ul class="list-group">
+    {% if results %}
+    {% for event in results %}
+    <li class="list-group-item">
+        <h5>{{ event.title }}</h5>
+        <p>
+            <strong>Date:</strong> {{ event.date.strftime('%Y-%m-%d') }} <br>
+            <strong>Time:</strong> {{ event.time.strftime('%H:%M') }} <br>
+            <strong>Location:</strong> {{ event.location }} <br>
+            <strong>Organizer Rating:</strong> {{ event.organizer.average_rating() if organizer else "Not rated yet" }}
+            <br>
+            <strong>Attendees:</strong> {{ event.users|length }}
+        </p>
+        <form action="{{ url_for('attend_event', event_id=event.id) }}" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-success btn-sm">Attend</button>
+        </form>
+    </li>
+    {% endfor %}
+    {% else %}
+    <li class="list-group-item text-muted">No events found.</li>
+    {% endif %}
+</ul>
+
+{% endblock %}
