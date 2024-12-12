@@ -1,0 +1,203 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark text for better contrast */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #004085; /* Strong contrast dark blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    background-color: #003366; /* Dark blue background */
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff; /* White text for good contrast */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffdd57; /* Yellow for hover effect, high contrast */
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff; /* White background for forms */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* Light gray borders */
+    background-color: #f9f9f9; /* Slightly gray input fields */
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #0056b3; /* Blue focus border */
+}
+
+form button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Table of Events */
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Light gray border for readability */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    background-color: #f9f9f9; /* Light gray background for cells */
+}
+
+th {
+    background-color: #e9ecef; /* Slightly darker gray for table headers */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternating rows for better readability */
+}
+
+/* Event Cards */
+.event-card {
+    background-color: #ffffff; /* White background for cards */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+    margin-top: 0;
+}
+
+.event-card .event-details {
+    color: #555; /* Dark gray text for better readability */
+}
+
+.event-card .event-details span {
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #003366; /* Dark blue background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Alerts */
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.alert.success {
+    background-color: #28a745; /* Green for success */
+}
+
+.alert.error {
+    background-color: #dc3545; /* Red for errors */
+}
+
+.alert.info {
+    background-color: #17a2b8; /* Blue for info */
+}
+
+.alert.warning {
+    background-color: #ffc107; /* Yellow for warnings */
+}
+
+/* Accessibility */
+button, a {
+    outline: none; /* Remove outline on focus */
+}
+
+button:focus, a:focus {
+    outline: 3px solid #ffdd57; /* Highlight with yellow on focus for accessibility */
+}
+
+/* High-contrast color adjustments for colorblind users */
+.high-contrast {
+    color: #000000; /* Black text for high contrast */
+    background-color: #ffffff; /* White background for high contrast */
+}
+
+.high-contrast .alert {
+    border: 2px solid #000;
+}
